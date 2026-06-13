@@ -8,9 +8,19 @@ const {
   deleteSession,
 } = require("../controllers/yogaSessionController");
 
-router.post("/", createSession);
+const { protect } = require("../middleware/authMiddleware");
+const roleMiddleware = require("../middleware/roleMiddleware");
+
+// Admin only - create yoga session
+router.post("/", protect, roleMiddleware(["admin"]), createSession);
+
+// Public - view yoga sessions
 router.get("/", getSessions);
-router.put("/:id", updateSession);
-router.delete("/:id", deleteSession);
+
+// Admin only - update yoga session
+router.put("/:id", protect, roleMiddleware(["admin"]), updateSession);
+
+// Admin only - delete yoga session
+router.delete("/:id", protect, roleMiddleware(["admin"]), deleteSession);
 
 module.exports = router;
