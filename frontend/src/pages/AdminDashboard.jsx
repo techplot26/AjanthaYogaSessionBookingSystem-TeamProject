@@ -40,32 +40,55 @@ function AdminDashboard() {
   const createSession = async (e) => {
     e.preventDefault();
 
-    await axios.post("/api/yoga-sessions", form);
+    try {
+      const token = localStorage.getItem("token");
 
-    alert("Session created successfully");
+      await axios.post("/api/yoga-sessions", form, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
-    setForm({
-      title: "",
-      instructor: "",
-      image: "session1.jpg",
-      date: "",
-      startTime: "",
-      endTime: "",
-      location: "Ajantha Yoga Studio",
-      duration: "",
-      capacity: "",
-      description: "",
-    });
+      alert("Session created successfully");
 
-    loadData();
+      setForm({
+        title: "",
+        instructor: "",
+        image: "session1.jpg",
+        date: "",
+        startTime: "",
+        endTime: "",
+        location: "Ajantha Yoga Studio",
+        duration: "",
+        capacity: "",
+        description: "",
+      });
+
+      loadData();
+    } catch (error) {
+      console.error("Error creating session:", error);
+      alert("Failed to create session. Please login as admin.");
+    }
   };
 
   const deleteSession = async (id) => {
     if (!window.confirm("Delete this session?")) return;
 
-    await axios.delete(`/api/yoga-sessions/${id}`);
-    alert("Session deleted");
-    loadData();
+    try {
+      const token = localStorage.getItem("token");
+
+      await axios.delete(`/api/yoga-sessions/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      alert("Session deleted");
+      loadData();
+    } catch (error) {
+      console.error("Error deleting session:", error);
+      alert("Failed to delete session. Please login as admin.");
+    }
   };
 
   return (
@@ -267,7 +290,7 @@ const styles = {
 
   cards: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr)",
     gap: "20px",
     marginBottom: "25px",
   },
