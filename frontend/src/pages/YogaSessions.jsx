@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "../axiosConfig";
 
-import hathaImg from "../assets/hatha.png";
-import session1Img from "../assets/session1.png";
+import hathaImg from "../assets/hatha.jpg";
+import session1Img from "../assets/session1.jpg";
 import session2Img from "../assets/session2.png";
 import session3Img from "../assets/session3.png";
 
@@ -84,9 +84,7 @@ function YogaSessions() {
 
         <div style={styles.heroCard}>
           <div>
-            <h2 style={styles.heroTitle}>
-              Start your wellness journey
-            </h2>
+            <h2 style={styles.heroTitle}>Start your wellness journey</h2>
 
             <p style={styles.heroText}>
               Book calming, beginner-friendly and power yoga classes.
@@ -94,9 +92,7 @@ function YogaSessions() {
           </div>
         </div>
 
-        <h2 style={styles.sectionTitle}>
-          Available Sessions
-        </h2>
+        <h2 style={styles.sectionTitle}>Available Sessions</h2>
 
         <div style={styles.sessionList}>
           {sessions.map((session) => (
@@ -110,9 +106,7 @@ function YogaSessions() {
               </div>
 
               <div style={styles.sessionInfo}>
-                <h3 style={styles.sessionTitle}>
-                  {session.title}
-                </h3>
+                <h3 style={styles.sessionTitle}>{session.title}</h3>
 
                 <p style={styles.sessionInstructor}>
                   Instructor: {session.instructor}
@@ -128,10 +122,7 @@ function YogaSessions() {
                   <input
                     type="date"
                     style={styles.dateInput}
-                    value={
-                      selectedOptions[session._id]
-                        ?.selectedDate || ""
-                    }
+                    value={selectedOptions[session._id]?.selectedDate || ""}
                     onChange={(e) =>
                       handleOptionChange(
                         session._id,
@@ -144,10 +135,7 @@ function YogaSessions() {
                   <input
                     type="time"
                     style={styles.timeInput}
-                    value={
-                      selectedOptions[session._id]
-                        ?.selectedTime || ""
-                    }
+                    value={selectedOptions[session._id]?.selectedTime || ""}
                     onChange={(e) =>
                       handleOptionChange(
                         session._id,
@@ -158,24 +146,17 @@ function YogaSessions() {
                   />
                 </div>
 
-                <p style={styles.sessionMeta}>
-                  Capacity: {session.capacity}
-                </p>
+                <p style={styles.sessionMeta}>Capacity: {session.capacity}</p>
 
                 <div style={styles.buttonRow}>
                   <button
-                    onClick={() =>
-                      bookSession(session._id)
-                    }
+                    onClick={() => bookSession(session._id)}
                     style={styles.bookButton}
                   >
                     Book
                   </button>
 
-                  <Link
-                    to={`/session/${session._id}`}
-                    style={styles.viewButton}
-                  >
+                  <Link to={`/session/${session._id}`} style={styles.viewButton}>
                     Details
                   </Link>
                 </div>
@@ -209,8 +190,7 @@ function YogaSessions() {
 const styles = {
   page: {
     minHeight: "100vh",
-    background:
-      "linear-gradient(160deg, #d88ad7, #9b5de5, #5b36c5)",
+    background: "linear-gradient(160deg, #f7f3e8, #dce8d5, #b7d7c2)",
     display: "flex",
     justifyContent: "center",
     padding: "20px",
@@ -219,11 +199,10 @@ const styles = {
   phone: {
     width: "390px",
     minHeight: "760px",
-    background: "#f8f5ff",
+    background: "#fffef9",
     borderRadius: "32px",
     padding: "22px",
-    boxShadow:
-      "0 20px 45px rgba(0,0,0,0.25)",
+    boxShadow: "0 20px 45px rgba(47,79,62,0.25)",
     position: "relative",
     paddingBottom: "85px",
   },
@@ -233,37 +212,39 @@ const styles = {
   },
 
   smallText: {
-    color: "#7c6f95",
+    color: "#4f6354",
     margin: 0,
   },
 
   title: {
-    color: "#351c75",
+    color: "#2f4f3e",
     fontSize: "26px",
     margin: "5px 0 0",
   },
 
   heroCard: {
-    background:
-      "linear-gradient(135deg,#9b5de5,#d88ad7)",
+    background: "linear-gradient(135deg, #dce8d5, #b7d7c2)",
     borderRadius: "24px",
     padding: "20px",
-    color: "white",
+    color: "#2f4f3e",
     marginBottom: "25px",
+    boxShadow: "0 10px 24px rgba(47,79,62,0.12)",
   },
 
   heroTitle: {
     fontSize: "20px",
     marginBottom: "8px",
+    color: "#2f4f3e",
   },
 
   heroText: {
     fontSize: "14px",
     lineHeight: "1.5",
+    color: "#4f6354",
   },
 
   sectionTitle: {
-    color: "#351c75",
+    color: "#2f4f3e",
     fontSize: "22px",
     marginBottom: "15px",
   },
@@ -275,13 +256,12 @@ const styles = {
   },
 
   sessionCard: {
-    background: "white",
+    background: "#ffffff",
     borderRadius: "22px",
     padding: "14px",
     display: "flex",
     gap: "14px",
-    boxShadow:
-      "0 8px 20px rgba(91,54,197,0.12)",
+    boxShadow: "0 8px 20px rgba(47,79,62,0.12)",
     overflow: "hidden",
   },
 
@@ -291,6 +271,7 @@ const styles = {
     height: "82px",
     borderRadius: "20px",
     overflow: "hidden",
+    background: "#f7f3e8",
   },
 
   sessionImageTag: {
@@ -306,19 +287,19 @@ const styles = {
 
   sessionTitle: {
     margin: "0 0 5px",
-    color: "#351c75",
+    color: "#2f4f3e",
     fontSize: "17px",
   },
 
   sessionInstructor: {
     margin: "0 0 5px",
-    color: "#6b7280",
+    color: "#4f6354",
     fontSize: "14px",
   },
 
   sessionMeta: {
     margin: "0 0 7px",
-    color: "#7c6f95",
+    color: "#4f6354",
     fontSize: "13px",
   },
 
@@ -336,7 +317,7 @@ const styles = {
     boxSizing: "border-box",
     padding: "7px",
     borderRadius: "12px",
-    border: "1px solid #ddd",
+    border: "1px solid #cfd8c6",
     fontSize: "11px",
   },
 
@@ -346,7 +327,7 @@ const styles = {
     boxSizing: "border-box",
     padding: "7px",
     borderRadius: "12px",
-    border: "1px solid #ddd",
+    border: "1px solid #cfd8c6",
     fontSize: "11px",
   },
 
@@ -370,8 +351,8 @@ const styles = {
   viewButton: {
     display: "inline-block",
     padding: "8px 14px",
-    background: "#f1e7ff",
-    color: "#5b36c5",
+    background: "#eef7ee",
+    color: "#2f7d32",
     borderRadius: "18px",
     textDecoration: "none",
     fontWeight: "bold",
@@ -382,17 +363,16 @@ const styles = {
     left: "20px",
     right: "20px",
     bottom: "18px",
-    background: "white",
+    background: "#355c4b",
     borderRadius: "24px",
     padding: "14px 10px",
     display: "flex",
     justifyContent: "space-around",
-    boxShadow:
-      "0 8px 25px rgba(0,0,0,0.15)",
+    boxShadow: "0 8px 25px rgba(47,79,62,0.25)",
   },
 
   navItem: {
-    color: "#5b36c5",
+    color: "#ffffff",
     textDecoration: "none",
     fontWeight: "bold",
     fontSize: "13px",

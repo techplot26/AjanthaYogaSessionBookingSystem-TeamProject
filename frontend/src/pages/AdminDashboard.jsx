@@ -22,6 +22,16 @@ function AdminDashboard() {
     loadData();
   }, []);
 
+  const getAuthConfig = () => {
+    const token = localStorage.getItem("token");
+
+    return {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+  };
+
   const loadData = async () => {
     const sessionRes = await axios.get("/api/yoga-sessions");
     const bookingRes = await axios.get("/api/bookings");
@@ -40,32 +50,43 @@ function AdminDashboard() {
   const createSession = async (e) => {
     e.preventDefault();
 
-    await axios.post("/api/yoga-sessions", form);
+    try {
+      await axios.post("/api/yoga-sessions", form, getAuthConfig());
 
-    alert("Session created successfully");
+      alert("Session created successfully");
 
-    setForm({
-      title: "",
-      instructor: "",
-      image: "session1.jpg",
-      date: "",
-      startTime: "",
-      endTime: "",
-      location: "Ajantha Yoga Studio",
-      duration: "",
-      capacity: "",
-      description: "",
-    });
+      setForm({
+        title: "",
+        instructor: "",
+        image: "session1.jpg",
+        date: "",
+        startTime: "",
+        endTime: "",
+        location: "Ajantha Yoga Studio",
+        duration: "",
+        capacity: "",
+        description: "",
+      });
 
-    loadData();
+      loadData();
+    } catch (error) {
+      console.error("Error creating session:", error);
+      alert("Failed to create session. Please login again as admin.");
+    }
   };
 
   const deleteSession = async (id) => {
     if (!window.confirm("Delete this session?")) return;
 
-    await axios.delete(`/api/yoga-sessions/${id}`);
-    alert("Session deleted");
-    loadData();
+    try {
+      await axios.delete(`/api/yoga-sessions/${id}`, getAuthConfig());
+
+      alert("Session deleted");
+      loadData();
+    } catch (error) {
+      console.error("Error deleting session:", error);
+      alert("Failed to delete session. Please login again as admin.");
+    }
   };
 
   return (
@@ -250,7 +271,7 @@ function AdminDashboard() {
 const styles = {
   page: {
     minHeight: "100vh",
-    background: "linear-gradient(160deg, #d88ad7, #9b5de5, #5b36c5)",
+    background: "linear-gradient(160deg, #f7f3e8, #dce8d5, #b7d7c2)",
     padding: "30px",
   },
 
@@ -260,7 +281,7 @@ const styles = {
   },
 
   title: {
-    color: "white",
+    color: "#2f4f3e",
     fontSize: "34px",
     marginBottom: "25px",
   },
@@ -273,12 +294,12 @@ const styles = {
   },
 
   statCard: {
-    background: "rgba(255,255,255,0.9)",
+    background: "rgba(255,254,249,0.95)",
     borderRadius: "24px",
     padding: "25px",
     textAlign: "center",
-    boxShadow: "0 10px 25px rgba(0,0,0,0.2)",
-    color: "#351c75",
+    boxShadow: "0 10px 25px rgba(47,79,62,0.18)",
+    color: "#2f4f3e",
   },
 
   grid: {
@@ -289,14 +310,14 @@ const styles = {
   },
 
   panel: {
-    background: "rgba(255,255,255,0.95)",
+    background: "rgba(255,254,249,0.96)",
     borderRadius: "24px",
     padding: "22px",
-    boxShadow: "0 10px 25px rgba(0,0,0,0.18)",
+    boxShadow: "0 10px 25px rgba(47,79,62,0.16)",
   },
 
   subTitle: {
-    color: "#351c75",
+    color: "#2f4f3e",
     marginTop: 0,
   },
 
@@ -315,18 +336,20 @@ const styles = {
   input: {
     padding: "12px",
     borderRadius: "14px",
-    border: "1px solid #ddd",
+    border: "1px solid #cfd8c6",
     fontSize: "14px",
     boxSizing: "border-box",
     width: "100%",
+    background: "#ffffff",
   },
 
   textarea: {
     padding: "12px",
     borderRadius: "14px",
-    border: "1px solid #ddd",
+    border: "1px solid #cfd8c6",
     minHeight: "80px",
     fontSize: "14px",
+    background: "#ffffff",
   },
 
   createButton: {
@@ -343,7 +366,7 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     gap: "12px",
-    background: "#f8f5ff",
+    background: "#eef7ee",
     borderRadius: "18px",
     padding: "14px",
     marginBottom: "12px",
@@ -354,7 +377,7 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     gap: "12px",
-    background: "#f8f5ff",
+    background: "#eef7ee",
     borderRadius: "18px",
     padding: "14px",
     marginBottom: "12px",
@@ -363,12 +386,12 @@ const styles = {
 
   sessionTitle: {
     margin: "0 0 6px",
-    color: "#351c75",
+    color: "#2f4f3e",
   },
 
   text: {
     margin: "0 0 4px",
-    color: "#6b7280",
+    color: "#4f6354",
     fontSize: "14px",
   },
 

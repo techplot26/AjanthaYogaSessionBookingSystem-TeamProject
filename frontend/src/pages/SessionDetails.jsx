@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "../axiosConfig";
 
-import hathaImg from "../assets/hatha.png";
-import session1Img from "../assets/session1.png";
+import hathaImg from "../assets/hatha.jpg";
+import session1Img from "../assets/session1.jpg";
 import session2Img from "../assets/session2.png";
 import session3Img from "../assets/session3.png";
 
@@ -171,80 +171,77 @@ const styles = {
   page: {
     minHeight: "100vh",
     background:
-      "linear-gradient(160deg,#d88ad7,#9b5de5,#5b36c5)",
+      "linear-gradient(160deg, #f7f3e8, #dce8d5, #b7d7c2)",
     display: "flex",
     justifyContent: "center",
     padding: "20px",
   },
 
-  phone: {
+    phone: {
     width: "390px",
     minHeight: "760px",
-    background: "#f8f5ff",
+    background: "#fffef9",
     borderRadius: "32px",
     padding: "22px",
-    boxShadow:
-      "0 20px 45px rgba(0,0,0,0.25)",
+    boxShadow: "0 20px 45px rgba(47,79,62,0.20)",
   },
 
   back: {
-    color: "#5b36c5",
+    color: "#2f7d32",
     textDecoration: "none",
     fontWeight: "bold",
   },
 
-  imageBox: {
+    imageBox: {
     marginTop: "20px",
     height: "210px",
     borderRadius: "28px",
     overflow: "hidden",
-    background: "#f1e7ff",
+    background: "#eef7ee",
   },
 
-  imageTag: {
+   imageTag: {
     width: "100%",
     height: "100%",
     objectFit: "cover",
   },
 
-  title: {
-    color: "#351c75",
+   title: {
+    color: "#2f4f3e",
     fontSize: "28px",
     marginBottom: "5px",
   },
 
-  instructor: {
-    color: "#6b7280",
+   instructor: {
+    color: "#4f6354",
     marginBottom: "18px",
   },
 
-  infoCard: {
-    background: "white",
+    infoCard: {
+    background: "#ffffff",
     borderRadius: "22px",
     padding: "15px",
-    boxShadow:
-      "0 8px 20px rgba(91,54,197,0.12)",
+    boxShadow: "0 8px 20px rgba(47,79,62,0.12)",
     color: "#374151",
   },
 
-  pickerCard: {
-    background: "white",
+   pickerCard: {
+    background: "#ffffff",
     borderRadius: "22px",
     padding: "15px",
     marginTop: "18px",
-    boxShadow:
-      "0 8px 20px rgba(91,54,197,0.12)",
+    boxShadow: "0 8px 20px rgba(47,79,62,0.12)",
   },
 
   subTitle: {
-    color: "#351c75",
+    color: "#2f4f3e",
     marginTop: "18px",
     marginBottom: "10px",
   },
 
   label: {
     display: "block",
-    color: "#6b7280",
+    color: "#4f6354",
     fontSize: "14px",
     marginTop: "10px",
     marginBottom: "5px",
@@ -254,16 +251,16 @@ const styles = {
     width: "100%",
     padding: "12px",
     borderRadius: "16px",
-    border: "1px solid #ddd",
+    border: "1px solid #cfd8c6",
     boxSizing: "border-box",
   },
 
   description: {
-    color: "#6b7280",
+    color: "#4f6354",
     lineHeight: "1.6",
   },
 
-  button: {
+   button: {
     width: "100%",
     marginTop: "20px",
     padding: "15px",

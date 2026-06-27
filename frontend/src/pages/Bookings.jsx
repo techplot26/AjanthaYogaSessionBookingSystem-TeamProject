@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "../axiosConfig";
 
-import hathaImg from "../assets/hatha.png";
-import session1Img from "../assets/session1.png";
+import hathaImg from "../assets/hatha.jpg";
+import session1Img from "../assets/session1.jpg";
 import session2Img from "../assets/session2.png";
 import session3Img from "../assets/session3.png";
 
@@ -95,7 +95,7 @@ function Bookings() {
 const styles = {
   page: {
     minHeight: "100vh",
-    background: "linear-gradient(160deg, #d88ad7, #9b5de5, #5b36c5)",
+    background: "linear-gradient(160deg, #f7f3e8, #dce8d5, #b7d7c2)",
     display: "flex",
     justifyContent: "center",
     padding: "20px",
@@ -104,14 +104,14 @@ const styles = {
   phone: {
     width: "390px",
     minHeight: "760px",
-    background: "#f8f5ff",
+    background: "#fffef9",
     borderRadius: "32px",
     padding: "22px",
-    boxShadow: "0 20px 45px rgba(0,0,0,0.25)",
+    boxShadow: "0 20px 45px rgba(47,79,62,0.20)",
   },
 
   title: {
-    color: "#351c75",
+    color: "#2f4f3e",
     fontSize: "30px",
   },
 
@@ -123,33 +123,35 @@ const styles = {
 
   activeTab: {
     background: "#7ed957",
+    color: "#1f2937",
     padding: "8px 18px",
     borderRadius: "18px",
     fontWeight: "bold",
   },
 
   tab: {
-    background: "white",
+    background: "#eef7ee",
     padding: "8px 18px",
     borderRadius: "18px",
-    color: "#6b7280",
+    color: "#4f6354",
+    fontWeight: "bold",
   },
 
   emptyText: {
-    color: "#6b7280",
-    background: "white",
+    color: "#4f6354",
+    background: "#ffffff",
     padding: "15px",
     borderRadius: "18px",
   },
 
   card: {
-    background: "white",
+    background: "#ffffff",
     borderRadius: "24px",
     padding: "14px",
     display: "flex",
     gap: "14px",
     marginBottom: "15px",
-    boxShadow: "0 8px 20px rgba(91,54,197,0.12)",
+    boxShadow: "0 8px 20px rgba(47,79,62,0.12)",
   },
 
   imageBox: {
@@ -158,7 +160,7 @@ const styles = {
     height: "82px",
     borderRadius: "20px",
     overflow: "hidden",
-    background: "#f1e7ff",
+    background: "#eef7ee",
   },
 
   imageTag: {
@@ -172,13 +174,13 @@ const styles = {
   },
 
   sessionTitle: {
-    color: "#351c75",
+    color: "#2f4f3e",
     margin: "0 0 5px",
   },
 
   text: {
     margin: "0 0 5px",
-    color: "#6b7280",
+    color: "#4f6354",
     fontSize: "14px",
   },
 
@@ -201,6 +203,7 @@ const styles = {
     borderRadius: "15px",
     padding: "6px 12px",
     cursor: "pointer",
+    fontWeight: "bold",
   },
 };
 

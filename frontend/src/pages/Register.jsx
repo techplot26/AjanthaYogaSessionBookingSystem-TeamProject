@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "../axiosConfig";
-import welcomeYoga from "../assets/welcome-yoga.png";
+import welcomeYoga from "../assets/welcome-yoga.jpg";
 
 function Register() {
   const navigate = useNavigate();
@@ -119,7 +119,7 @@ function Register() {
 const styles = {
   page: {
     minHeight: "100vh",
-    background: "linear-gradient(135deg, #d88ad7, #9b5de5, #5b36c5)",
+    background: "linear-gradient(160deg, #f7f3e8, #dce8d5, #b7d7c2)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -144,26 +144,31 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
+    background: "rgba(255,254,249,0.65)",
+  color: "#2f4f3e",
   },
 
   heroTitle: {
     fontSize: "44px",
     margin: "0 0 16px",
+    color: "#2f4f3e",
   },
 
   heroText: {
     fontSize: "17px",
     lineHeight: "1.6",
     marginBottom: "30px",
+    color: "#4f6354",
   },
 
   heroImage: {
     width: "100%",
-    maxWidth: "360px",
-    height: "300px",
-    objectFit: "cover",
-    borderRadius: "28px",
-    boxShadow: "0 16px 36px rgba(0,0,0,0.25)",
+    maxWidth: "320px",
+    height: "260px",
+    objectFit: "contain",
+    borderRadius: "22px",
+    background: "#eef7ee",
+    boxShadow: "0 16px 36px rgba(47,79,62,0.22)",
   },
 
   formPanel: {
@@ -173,12 +178,12 @@ const styles = {
 
   title: {
     fontSize: "34px",
-    color: "#351c75",
+    color: "#2f4f3e",
     margin: "0 0 8px",
   },
 
   subtitle: {
-    color: "#6b7280",
+    color: "#4f6354",
     marginBottom: "25px",
   },
 

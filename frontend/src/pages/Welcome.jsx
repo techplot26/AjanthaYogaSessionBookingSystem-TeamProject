@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import welcomeYoga from "../assets/welcome-yoga.png";
+import welcomeYoga from "../assets/welcome-yoga.jpg";
 
 function Welcome() {
   return (
@@ -39,7 +39,7 @@ function Welcome() {
 const styles = {
   page: {
     minHeight: "100vh",
-    background: "linear-gradient(135deg, #d88ad7, #9b5de5, #5b36c5)",
+    background: "linear-gradient(160deg, #f7f3e8, #dce8d5, #b7d7c2)",
     padding: "60px",
     boxSizing: "border-box",
     display: "flex",
@@ -54,19 +54,20 @@ const styles = {
     gridTemplateColumns: "1.1fr 0.9fr",
     alignItems: "center",
     gap: "50px",
-    background: "rgba(255,255,255,0.16)",
+    background: "rgba(255, 254, 249, 0.78)",
     borderRadius: "36px",
     padding: "55px",
-    boxShadow: "0 25px 60px rgba(0,0,0,0.25)",
+    boxShadow: "0 25px 60px rgba(47,79,62,0.25)",
   },
 
   left: {
-    color: "white",
+    color: "#2f4f3e",
   },
 
   badge: {
     display: "inline-block",
-    background: "rgba(255,255,255,0.22)",
+    background: "#dce8d5",
+    color: "#2f4f3e",
     padding: "10px 18px",
     borderRadius: "20px",
     fontWeight: "bold",
@@ -78,6 +79,7 @@ const styles = {
     lineHeight: "1.1",
     margin: "0 0 22px",
     maxWidth: "720px",
+    color: "#2f4f3e",
   },
 
   subtitle: {
@@ -85,6 +87,7 @@ const styles = {
     lineHeight: "1.7",
     maxWidth: "650px",
     marginBottom: "34px",
+    color: "#4f6354",
   },
 
   actions: {
@@ -103,8 +106,8 @@ const styles = {
   },
 
   secondaryButton: {
-    background: "white",
-    color: "#5b36c5",
+    background: "#fffef9",
+    color: "#2f7d32",
     padding: "15px 30px",
     borderRadius: "26px",
     textDecoration: "none",
@@ -118,12 +121,12 @@ const styles = {
 
   image: {
     width: "100%",
-    maxWidth: "430px",
-    height: "430px",
-    objectFit: "cover",
-    borderRadius: "40px",
-    boxShadow: "0 20px 45px rgba(0,0,0,0.25)",
-    background: "white",
+    maxWidth: "420px",
+    height: "360px",
+    objectFit: "contain",
+    borderRadius: "24px",
+    boxShadow: "0 20px 45px rgba(47,79,62,0.25)",
+    background: "#eef7ee",
   },
 };
 

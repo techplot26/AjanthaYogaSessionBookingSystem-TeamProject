@@ -102,28 +102,29 @@ function Profile() {
 const styles = {
   page: {
     minHeight: "100vh",
-    background: "linear-gradient(160deg, #d88ad7, #9b5de5, #5b36c5)",
+    background: "linear-gradient(160deg, #f7f3e8, #dce8d5, #b7d7c2)",
     padding: "30px",
   },
 
   backButton: {
-    background: "rgba(255,255,255,0.9)",
+    background: "#fffef9",
     border: "none",
     borderRadius: "18px",
     padding: "10px 18px",
-    color: "#351c75",
+    color: "#2f7d32",
     fontWeight: "bold",
     cursor: "pointer",
     marginBottom: "25px",
+    boxShadow: "0 6px 16px rgba(47,79,62,0.15)",
   },
 
   container: {
     maxWidth: "800px",
     margin: "0 auto",
-    background: "rgba(255,255,255,0.95)",
+    background: "rgba(255,254,249,0.95)",
     borderRadius: "28px",
     padding: "35px",
-    boxShadow: "0 20px 45px rgba(0,0,0,0.22)",
+    boxShadow: "0 20px 45px rgba(47,79,62,0.20)",
   },
 
   header: {
@@ -138,7 +139,7 @@ const styles = {
     height: "90px",
     borderRadius: "50%",
     background: "#7ed957",
-    color: "#351c75",
+    color: "#1f2937",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -147,13 +148,13 @@ const styles = {
   },
 
   title: {
-    color: "#351c75",
+    color: "#2f4f3e",
     fontSize: "34px",
     margin: 0,
   },
 
   subtitle: {
-    color: "#6b7280",
+    color: "#4f6354",
     marginTop: "8px",
   },
 
@@ -164,7 +165,7 @@ const styles = {
   },
 
   label: {
-    color: "#351c75",
+    color: "#2f4f3e",
     fontWeight: "bold",
     marginTop: "10px",
   },
@@ -172,16 +173,18 @@ const styles = {
   input: {
     padding: "14px",
     borderRadius: "16px",
-    border: "1px solid #ddd",
+    border: "1px solid #cfd8c6",
     fontSize: "15px",
+    background: "#ffffff",
   },
 
   textarea: {
     padding: "14px",
     borderRadius: "16px",
-    border: "1px solid #ddd",
+    border: "1px solid #cfd8c6",
     fontSize: "15px",
     minHeight: "90px",
+    background: "#ffffff",
   },
 
   updateButton: {
