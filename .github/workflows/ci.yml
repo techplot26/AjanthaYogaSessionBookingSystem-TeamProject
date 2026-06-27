@@ -1,4 +1,4 @@
-name: Ajantha Yoga CI/CD
+name: Ajantha Yoga Assignment 2 CI/CD
 
 on:
   push:
@@ -12,12 +12,16 @@ on:
 
 jobs:
   backend-ci:
-    name: Backend CI
+    name: Backend CI - Test and Build
     runs-on: ubuntu-latest
 
     defaults:
       run:
         working-directory: backend
+
+    env:
+      JWT_SECRET: test_secret
+      PORT: 5001
 
     steps:
       - name: Checkout code
@@ -31,11 +35,14 @@ jobs:
       - name: Install backend dependencies
         run: npm install
 
+      - name: Run backend unit tests
+        run: npm test
+
       - name: Check backend build
         run: npm run build --if-present
 
   frontend-ci:
-    name: Frontend CI
+    name: Frontend CI - Build
     runs-on: ubuntu-latest
 
     defaults:
@@ -68,14 +75,14 @@ jobs:
     steps:
       - name: Deploy latest code to EC2
         run: |
-          cd ~/AjanthaYogaSessionBookingSystem
+          cd ~/AjanthaYogaSessionBookingSystem-TeamProject
 
           git checkout main
           git pull origin main
 
           cd backend
           npm install
-          pm2 restart ajantha-backend || pm2 start server.js --name ajantha-backend
+          pm2 restart ajantha-team-backend || pm2 start server.js --name ajantha-team-backend
 
           cd ../frontend
           npm install
