@@ -216,43 +216,7 @@ PUT /api/bookings/:id/cancel
 The application is deployed on an AWS EC2 Ubuntu instance using:
 
 * Node.js
-* MongoDB AtlasSkip to content
-techplot26
-AjanthaYogaSessionBookingSystem-TeamProject
-Repository navigation
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security and quality
-Insights
-Settings
-Ajantha Yoga Assignment 2 CI/CD
-Merge pull request #7 from techplot26/feature/devops-deployment #26
-All jobs
-Run details
-Triggered via push 2 hours ago
-@techplot26techplot26
-pushed
- b5aeca2
-main
-Status
-Queued
-Total duration
-–
-Artifacts
-–
-
-
-Annotations
-2 warnings
-Backend CI - Test and Build
-Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-Frontend CI - Build
-Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
-
+* MongoDB Atlas
 * PM2 Process Manager
 * Nginx Reverse Proxy
 * GitHub Actions
