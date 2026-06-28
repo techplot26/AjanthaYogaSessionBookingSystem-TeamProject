@@ -2,9 +2,7 @@
  
 ## Project Overview
 
-The **Ajantha Yoga Session Booking System** is a full-stack web application developed to simplify the management and booking of yoga sessions. The system enables users to browse available yoga sessions, register, log in, book and cancel yoga sessions, and manage their profiles. Administrators can securely manage yoga sessions and monitor bookings through a dedicated administration dashboard.
-
-The project was developed using modern software engineering practices, including Object-Oriented Programming, Design Patterns, RESTful APIs, GitHub version control, GitHub Actions CI/CD, and deployment on AWS EC2.
+The Ajantha Yoga Session Booking System is a full-stack web application designed to streamline the management and booking of yoga sessions. The system enables users to browse available sessions, register, log in, book and cancel sessions, and manage their profiles, while administrators can securely manage yoga sessions and monitor bookings through a dedicated dashboard. The project was developed using modern software engineering practices, including Object-Oriented Programming (OOP), Design Patterns, RESTful APIs, GitHub version control, GitHub Actions CI/CD, and deployment on AWS EC2. Backend functionality was validated through unit testing using the Mocha and Chai testing frameworks, while RESTful APIs were thoroughly tested using Postman.
 
 ---
 
