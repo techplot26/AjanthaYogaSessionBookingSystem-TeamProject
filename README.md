@@ -1,49 +1,75 @@
-# Ajantha Yoga Session Booking System
-
+# Ajantha Yoga Session Booking System Team Project
+ 
 ## Project Overview
 
-Ajantha Yoga Session Booking System is a full-stack web application. This system allows users to browse yoga sessions, register, login, book sessions, cancel bookings, and manage their profiles. Administrators can manage yoga sessions and monitor bookings.
+The **Ajantha Yoga Session Booking System** is a full-stack web application developed to simplify the management and booking of yoga sessions. The system enables users to browse available yoga sessions, register, log in, book and cancel yoga sessions, and manage their profiles. Administrators can securely manage yoga sessions and monitor bookings through a dedicated administration dashboard.
 
----
-## Project Managment with JIRA.
-> Software project management with JIRA Board URL
-https://connect-team-d6w8rnp7.atlassian.net/jira/software/projects/SCRUM/boards/1
-## Live Deployment
-
-**Public URL:**
-
-http://3.26.242.17
-
-**Backend API:**
-
-http://3.26.242.17:5001/
-
-> Note: EC2 instance may be stopped in status due to avoiding personal AWS charges may incur as .Also the Public ip may subject to change as per AWS instance login.
-
+The project was developed using modern software engineering practices, including Object-Oriented Programming, Design Patterns, RESTful APIs, GitHub version control, GitHub Actions CI/CD, and deployment on AWS EC2.
 
 ---
 
-## GitHub Repository
+
+# Live Deployment
+
+**Application URL**
+
+```
+http://3.26.213.247
+```
+
+**Backend API**
+
+```
+http://3.26.213.247:5001
+```
+
+### Demo Credentials
+
+**Administrator**
+
+```
+Email: adminfinal@ajantha.com
+Password: Admin123
+```
+
+**Test User**
+
+```
+Email: testuser@ajantha.com
+Password: Test123$$
+```
+
+> **Note:** The AWS EC2 instance may be stopped when the project is not being demonstrated to avoid unnecessary AWS charges. If restarted, the public IP address may change.
+
+---
+
+# GitHub Repository
 
 Repository:
 
-https://github.com/techplot26/AjanthaYogaSessionBookingSystem
+```
+https://github.com/techplot26/AjanthaYogaSessionBookingSystem-TeamProject
+```
 
 ---
 
-## Features
+# Features
 
-### User Features
+## User Features
 
 * User Registration
-* User Login (JWT Authentication)
-* View Yoga Sessions
+* User Login using JWT Authentication
+* Browse Available Yoga Sessions
+* View Session Details
 * Book Yoga Sessions
 * Cancel Bookings
+* View Booking History
 * Update User Profile
 
-### Admin Features
 
+## Administrator Features
+
+* Secure Administrator Login
 * Create Yoga Sessions
 * Update Yoga Sessions
 * Delete Yoga Sessions
@@ -52,44 +78,62 @@ https://github.com/techplot26/AjanthaYogaSessionBookingSystem
 
 ---
 
-## Technology Stack
+# Technology Stack
 
-### Frontend
+## Frontend
 
 * React.js
+* HTML5
+* CSS
+* JavaScript
 
-
-### Backend
+## Backend
 
 * Node.js
 * Express.js
 * JWT Authentication
 
+## Database
 
-### Database
+* MongoDB Atlas
 
-* MongoDB 
 
-### DevOps
+## DevOps & Cloud
 
 * GitHub
 * GitHub Actions
-* AWS EC2
+* Self-Hosted GitHub Runner
+* AWS EC2 (Ubuntu)
 * PM2 Process Manager
+
 
 ---
 
-## Installation Instructions
+# Design Patterns Implemented
 
-### Clone Repository
+* Factory Pattern
+* Singleton Pattern
+* Strategy Pattern
+* Observer Pattern
+* Proxy Pattern
+* Facade Pattern
+* Chain of Responsibility
+
+---
+
+# Installation Instructions
+
+## Clone Repository
 
 ```bash
-git clone https://github.com/techplot26/AjanthaYogaSessionBookingSystem.git
+git clone https://github.com/techplot26/AjanthaYogaSessionBookingSystem-TeamProject.git
 
-cd AjanthaYogaSessionBookingSystem
+cd AjanthaYogaSessionBookingSystem-TeamProject
 ```
 
-### Backend Setup
+---
+
+## Backend Setup
 
 ```bash
 cd backend
@@ -97,17 +141,17 @@ cd backend
 npm install
 ```
 
-Create .env file:
+Create a `.env` file inside the **backend** folder.
 
 ```env
 PORT=5001
 
-MONGO_URI=mongodb://127.0.0.1:27017/ajantha_yoga
+MONGO_URI=<Your MongoDB Atlas Connection String>
 
-JWT_SECRET=ajantha_yoga_secret_key
+JWT_SECRET=<Your JWT Secret>
 ```
 
-Start Backend:
+Start the backend server.
 
 ```bash
 npm start
@@ -115,7 +159,7 @@ npm start
 
 ---
 
-### Frontend Setup
+## Frontend Setup
 
 ```bash
 cd frontend
@@ -125,96 +169,137 @@ npm install
 npm start
 ```
 
-Frontend will run on:
+The frontend runs at:
 
-```text
+```
 http://localhost:3000
 ```
 
 ---
 
-## Deployment
+# API Endpoints
 
-### AWS EC2
+## Authentication
 
-Application is deployed on:
+```
+POST /api/auth/register
 
-* Ubuntu EC2 Instance
-* Node.js Runtime
-* MongoDB Atlas
+POST /api/auth/login
+```
+
+## Yoga Sessions
+
+```
+GET /api/yoga-sessions
+
+POST /api/yoga-sessions
+
+PUT /api/yoga-sessions/:id
+
+DELETE /api/yoga-sessions/:id
+```
+
+## Bookings
+
+```
+GET /api/bookings
+
+POST /api/bookings
+
+PUT /api/bookings/:id/cancel
+```
+
+---
+
+# Deployment
+
+The application is deployed on an AWS EC2 Ubuntu instance using:
+
+* Node.js
+* MongoDB AtlasSkip to content
+techplot26
+AjanthaYogaSessionBookingSystem-TeamProject
+Repository navigation
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security and quality
+Insights
+Settings
+Ajantha Yoga Assignment 2 CI/CD
+Merge pull request #7 from techplot26/feature/devops-deployment #26
+All jobs
+Run details
+Triggered via push 2 hours ago
+@techplot26techplot26
+pushed
+ b5aeca2
+main
+Status
+Queued
+Total duration
+–
+Artifacts
+–
+
+
+Annotations
+2 warnings
+Backend CI - Test and Build
+Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Frontend CI - Build
+Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+
 * PM2 Process Manager
+* Nginx Reverse Proxy
+* GitHub Actions
+* Self-Hosted GitHub Runner
 
-### PM2 Commands
+Useful PM2 commands:
 
 ```bash
-pm2 start server.js --name ajantha-backend
+pm2 start server.js --name ajantha-team-backend
 
-pm2 restart ajantha-backend
+pm2 restart ajantha-team-backend
 
-pm2 logs ajantha-backend
+pm2 logs ajantha-team-backend
 
 pm2 save
 ```
 
 ---
 
-## CI/CD Pipeline
+# Continuous Integration / Continuous Deployment (CI/CD)
 
-GitHub Actions automatically performs:
+GitHub Actions automatically performs the following tasks:
 
 ### Continuous Integration (CI)
 
-* Checkout Code
+* Checkout Repository
 * Install Backend Dependencies
 * Install Frontend Dependencies
-* Build Frontend
-* Validate Backend Build
+* Build React Application
 
 ### Continuous Deployment (CD)
 
-* Deploy to EC2 using GitHub Self-Hosted Runner
-* Restart Backend Service
-* Update Application Automatically
+* Deploy Application to AWS EC2
+* Execute Deployment using Self-Hosted Runner
+* Restart Backend Service using PM2
+* Update Production Application
 
-Workflow File:
+Workflow file:
 
-```text
+```
 .github/workflows/ci.yml
 ```
 
 ---
 
-## Testing
-
-### Backend API
-
-```text
-GET /api/yoga-sessions
-
-POST /api/auth/register
-
-POST /api/auth/login
-
-GET /api/bookings
-```
-
----
-
-## Login Credentials
-
-### User Access
-
-Users can register a new account using the Registration page.
+# Authors
 
 
-### Admin Access
-
-Admin functionality can be accessed using an administrator account created in MongoDB.
-
----
-
-## Author
-
-Rizwan Mohammed
-
-
+* Vynka Smith
+* Rizwan Mohammed
